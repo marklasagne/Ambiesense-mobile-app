@@ -7,7 +7,7 @@ import {
   } from 'react-native';
 
 // connecting to my desktop here
-const ws = new WebSocket('ws://10.0.0.4:8082');
+const ws = new WebSocket('ws://10.0.0.3:8082');
 ws.onopen = () => {
   // open connection 
   console.log('phone connected')

@@ -19,31 +19,26 @@ const LandingPage = ({ navigation }) => {
                 style={styles.input}
                 onChangeText={onChangeText}
                 value={username}
-                placeholderTextColor={'#40446'}
                 placeholder="Username"
                 keyboard="numeric"
             />
             <TextInput
                 style={styles.input}
-                placeholderTextColor={'#40446'}
                 placeholder="Email"
                 keyboard="numeric"
             />
             <TextInput
                 style={styles.input}
-                placeholderTextColor={'#40446'}
                 placeholder="Mobile number"
                 keyboard="numeric"
             />
             <TextInput
                 style={styles.input}
-                placeholderTextColor={'#40446'}
                 placeholder="Password"
                 keyboard="numeric"
             />
             <TextInput
                 style={styles.input}
-                placeholderTextColor={'#40446'}
                 placeholder="Re-enter password"
                 keyboard="numeric"
             />
