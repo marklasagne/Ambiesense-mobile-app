@@ -1,3 +1,11 @@
+import React from 'react';
+import {
+    StyleSheet,
+    Text,
+    View,
+    Button,
+  } from 'react-native';
+
 // connecting to my desktop here
 const ws = new WebSocket('ws://10.0.0.4:8082');
 ws.onopen = () => {
@@ -16,9 +24,8 @@ ws.onclose = (e) => {
 }
 
 
-const EnvironmentList = () => {
+const HomePage = () => {
   return (
-    
     <View>
       <Text>HELLO HOWDY!</Text>
       <View style={styles.space}/>
@@ -54,4 +61,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default EnvironmentList;
+export default HomePage;
