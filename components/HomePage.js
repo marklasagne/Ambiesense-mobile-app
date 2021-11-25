@@ -8,7 +8,7 @@ import {
 
 // connecting to my desktop here
 const ws = new WebSocket('ws://10.0.0.3:8082');
-ws.onopen = () => {
+ws.onopen = () => {git 
   // open connection 
   console.log('phone connected')
 };

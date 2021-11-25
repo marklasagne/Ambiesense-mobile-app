@@ -20,27 +20,26 @@ const LandingPage = ({ navigation }) => {
                 onChangeText={onChangeText}
                 value={username}
                 placeholder="Username"
+                placeholderTextColor="#6C7072"
                 keyboard="numeric"
             />
             <TextInput
                 style={styles.input}
                 placeholder="Email"
                 keyboard="numeric"
-            />
-            <TextInput
-                style={styles.input}
-                placeholder="Mobile number"
-                keyboard="numeric"
+                placeholderTextColor="#6C7072"
             />
             <TextInput
                 style={styles.input}
                 placeholder="Password"
                 keyboard="numeric"
+                placeholderTextColor="#6C7072"
             />
             <TextInput
                 style={styles.input}
                 placeholder="Re-enter password"
                 keyboard="numeric"
+                placeholderTextColor="#6C7072"
             />
             <Pressable style={styles.button} onPress={() => navigation.navigate('DecisionPage', {
                 name: username
@@ -77,6 +76,7 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         backgroundColor: '#202324',
         margin: 10,
+        color: '#FFF',
         padding: 8
     },
     button: {

@@ -4,9 +4,9 @@ import {
     StyleSheet,
     Text,
     View,
-    Image,
     ImageBackground
   } from 'react-native';
+  import SVGImg from '../assets/logo.svg';
 
 
 const LandingPage = ({ navigation }) => {
@@ -14,7 +14,7 @@ const LandingPage = ({ navigation }) => {
     <View style={styles.container}>
         <ImageBackground style={styles.background} source={require('../assets/landing_background.png')}>
             <View style={styles.square}>
-                <Image style={styles.logo} source={require('../assets/logo.png')} />
+                <SVGImg style={styles.logo} />
             </View>
         </ImageBackground>
         <View style={styles.textContainer}>
