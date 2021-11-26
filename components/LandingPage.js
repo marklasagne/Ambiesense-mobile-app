@@ -4,9 +4,14 @@ import {
     StyleSheet,
     Text,
     View,
+    Image,
     ImageBackground
   } from 'react-native';
   import SVGImg from '../assets/logo.svg';
+ import icon_1 from '../assets/Brands.png';
+ import icon_2 from '../assets/Brands-1.png';
+ import icon_3 from '../assets/Brands-2.png';
+ import icon_4 from '../assets/Brands-3.png';
 
 
 const LandingPage = ({ navigation }) => {
@@ -22,6 +27,12 @@ const LandingPage = ({ navigation }) => {
             <Text>Get Started</Text>
         </Pressable>
         <Text style={styles.text}>Already have an account? <Text style={styles.clickable}>Sign in</Text></Text>
+        <View style={styles.iconContainer}>
+            <Image source={icon_1} />
+            <Image source={icon_2} />
+            <Image source={icon_3} />
+            <Image source={icon_4} />
+        </View>
         </View>
     </View>
   );
@@ -72,7 +83,12 @@ const styles = StyleSheet.create({
     clickable: {
         textDecorationLine: 'underline',
         color: '#E71D36'
-    }
+    },
+    iconContainer: {
+        flexDirection:'row', 
+        flexWrap:'wrap',
+        marginTop: 10,
+    },
 })
 
 export default LandingPage;
