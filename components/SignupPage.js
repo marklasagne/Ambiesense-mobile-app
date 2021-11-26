@@ -9,7 +9,7 @@ import {
 
 
 const LandingPage = ({ navigation }) => {
-  const [username, onChangeText] = useState('');
+    const [username, onChangeText] = useState('');
   
   return (
     <View style={styles.container}>
@@ -31,6 +31,12 @@ const LandingPage = ({ navigation }) => {
             />
             <TextInput
                 style={styles.input}
+                placeholder="Mobile Number"
+                keyboard="numeric"
+                placeholderTextColor="#6C7072"
+            />
+            <TextInput
+                style={styles.input}
                 placeholder="Password"
                 keyboard="numeric"
                 placeholderTextColor="#6C7072"
@@ -41,11 +47,16 @@ const LandingPage = ({ navigation }) => {
                 keyboard="numeric"
                 placeholderTextColor="#6C7072"
             />
-            <Pressable style={styles.button} onPress={() => navigation.navigate('DecisionPage', {
-                name: username
-            })}>
-                <Text>Done</Text>
-            </Pressable>
+            <View style={styles.buttonContainer}>
+            <   Pressable style={[{backgroundColor: '#E71D36'}, styles.button]} onPress={() => navigation.navigate('LandingPage')}>
+                    <Text>Cancel</Text>
+                </Pressable>
+                <Pressable style={[{backgroundColor: '#2EC4B6'}, styles.button]} onPress={() => navigation.navigate('DecisionPage', {
+                    name: username
+                })}>
+                    <Text>Done</Text>
+                </Pressable>
+            </View>
         </View>
     </View>
   );
@@ -79,14 +90,18 @@ const styles = StyleSheet.create({
         color: '#FFF',
         padding: 8
     },
+    buttonContainer: {
+        flexDirection:'row', 
+        flexWrap:'wrap',
+    },
     button: {
         justifyContent: 'center',
         alignItems: 'center',
         position: 'relative',
-        width: '50%',
+        width: '25%',
         height: 48,
         marginTop: 15,
-        backgroundColor: '#2EC4B6',
+        margin: 10,
         borderRadius: 48
     },
     

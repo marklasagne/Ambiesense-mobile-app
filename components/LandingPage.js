@@ -41,13 +41,14 @@ const styles = StyleSheet.create({
         marginTop: '10%',
         opacity: 0.75,
         backgroundColor: '#090A0A',
-        borderRadius: 25,
+        borderRadius: 15,
         width: '95%',
         height: '65%',
     }, 
     logo: {
        width: '100%',
        height: '100%',
+       bottom: 50,
     },
     textContainer: {
         justiftyContent: 'center',
