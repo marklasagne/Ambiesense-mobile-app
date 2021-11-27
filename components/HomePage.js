@@ -5,6 +5,8 @@ import {
     View,
     Button,
   } from 'react-native';
+import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
+import BottomNavigation from './BottomNavigation';
 
 // connecting to my desktop here
 const ws = new WebSocket('ws://10.0.0.3:8082');
