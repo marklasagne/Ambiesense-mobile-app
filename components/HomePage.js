@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     StyleSheet,
     Text,
     View,
     Button,
+    FlatList,
+    TouchableOpacity,
   } from 'react-native';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import BottomNavigation from './BottomNavigation';
@@ -27,39 +29,51 @@ ws.onclose = (e) => {
 
 
 const HomePage = () => {
+  const [environments, setEnvironments] = useState([
+    { 'key': 'rainforest', 'name': 'Rain Forest' },
+    { 'key': 'coffeeshop', 'name': 'Coffee Shop' },
+    { 'key': 'rainstorm', 'name' : 'Rain Storm' },
+    { 'key': 'louvre', 'name': 'The Louvre' },
+    { 'key': 'airplane', 'name': 'Airplane' },
+    { 'key': 'concert', 'name': 'Concert' },
+    { 'key': 'space', 'name': 'Space' },
+    { 'key': 'park', 'name': 'Park'},
+  ]);
+
   return (
-    <View>
-      <Text>HELLO HOWDY!</Text>
-      <View style={styles.space}/>
-      <Button
-        style={styles.button}
-        title="RED"
-        onPress={() => ws.send(JSON.stringify({'name': 'rainforest'}))}
-      />
-      <View style={styles.space}/>
-      <Button
-        style={styles.button}
-        title="BLUE"
-        onPress={() => ws.send(JSON.stringify({'name': 'rain'}))}
-      />
-      <View style={styles.space}/>
-      <Button
-        style={styles.button}
-        title="YELLOW"
-        onPress={() => ws.send(JSON.stringify({'name': 'off'}))}
+    <View style={styles.container}>
+      <FlatList
+        data={environments}
+        numColumns={2}
+        renderItem={({ item }) => (
+          <TouchableOpacity style={styles.item} onPress={() => ws.send(item.key)}>
+            <Text style={styles.itemText}>{item.name}</Text> 
+          </TouchableOpacity>
+        )}
       />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  button: {
-    marginBotton: 20,
-    padding: 30
+  container: {
+    flex: 1,
+    marginVertical: 5,
+    marginHorizontal: 5,
   },
-  space: {
-    width: 20,
-    height: 20
+  item: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    flex: 1,
+    margin: 5,
+    color: '#fff',
+    backgroundColor: '#000',
+    height: 140,
+  },
+  itemText: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: '#fff',
   }
 });
 

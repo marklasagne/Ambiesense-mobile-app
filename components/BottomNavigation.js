@@ -1,13 +1,12 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomeIcon from '../assets/Brands.png';
-import FavoriteIcon from '../assets/Brands.png';
+import HomeIcon from '../assets/home.svg';
 import Home from '../components/LandingPage';
 
 const BottomNavigation = () => {
     const Bottomtabs = createBottomTabNavigator();
 
-    const changeIcontColor = (focused) => {
+    const changeIconColor = (focused) => {
         return focused == true ? '#9AB87A' : '#FFFFFF';
     };
 
@@ -29,14 +28,15 @@ const BottomNavigation = () => {
                 )
           }}
          />
-         <Bottomtabs.Screen name ="Home" component={Home}
+         <Bottomtabs.Screen name ="Favorites" component={Home}
           options={{
               tabBarIcon: ({ focused }) => (
-                    <FavoriteIcon/ >
+                    <HomeIcon/ >
                 )
           }}
          />
-      </Bottomtabs.Navigator>
-        
+      </Bottomtabs.Navigator> 
     )
 };
+
+export default BottomNavigation;

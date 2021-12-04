@@ -68,9 +68,6 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         padding: 15
     },
-    icon: {
-        
-    },
     buttonText: {
       
     },
