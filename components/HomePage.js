@@ -34,19 +34,19 @@ const HomePage = () => {
       <Button
         style={styles.button}
         title="RED"
-        onPress={() => ws.send('red')}
+        onPress={() => ws.send(JSON.stringify({'name': 'rainforest'}))}
       />
       <View style={styles.space}/>
       <Button
         style={styles.button}
         title="BLUE"
-        onPress={() => ws.send('blue')}
+        onPress={() => ws.send(JSON.stringify({'name': 'rain'}))}
       />
       <View style={styles.space}/>
       <Button
         style={styles.button}
         title="YELLOW"
-        onPress={() => ws.send('yellow')}
+        onPress={() => ws.send(JSON.stringify({'name': 'off'}))}
       />
     </View>
   );

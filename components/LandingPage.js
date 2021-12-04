@@ -44,7 +44,6 @@ const styles = StyleSheet.create({
     },
     background: {
         height: '80%',
-        position: 'relative',
         alignItems: 'center',
         justiftyContent: 'center',
     },
@@ -55,11 +54,11 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         width: '95%',
         height: '65%',
+        alignItems: 'center',
+        justiftyContent: 'center',
     }, 
     logo: {
-       width: '100%',
-       height: '100%',
-       bottom: 50,
+        bottom: 50,
     },
     textContainer: {
         justiftyContent: 'center',
