@@ -6,14 +6,19 @@ import {
     Button,
     FlatList,
     TouchableOpacity,
+    ImageBackground
   } from 'react-native';
-import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
-import BottomNavigation from './BottomNavigation';
+import airplane from '../assets/coffeeshop.png';
+import coffeeshop from '../assets/coffeeshop.png';
+import concert from '../assets/concert.png';
+import louvre from '../assets/louvre.png';
+import rainforest from '../assets/rainforest.png';
+import rainstorm from '../assets/rainstorm.png';
 
-// connecting to my desktop here
-const ws = new WebSocket('ws://10.0.0.3:8082');
-ws.onopen = () => {git 
-  // open connection 
+
+// connecting to my server here
+const ws = new WebSocket('ws://10.201.11.130:8082');
+ws.onopen = () => { 
   console.log('phone connected')
 };
 ws.onmessage = (e) => {
@@ -22,7 +27,6 @@ ws.onmessage = (e) => {
 ws.onerror = (e) => {
   console.log(e.message);
 };
-
 ws.onclose = (e) => {
   console.log(e.code,e.reason);
 }
@@ -30,24 +34,27 @@ ws.onclose = (e) => {
 
 const HomePage = () => {
   const [environments, setEnvironments] = useState([
-    { 'key': 'rainforest', 'name': 'Rain Forest' },
-    { 'key': 'coffeeshop', 'name': 'Coffee Shop' },
-    { 'key': 'rainstorm', 'name' : 'Rain Storm' },
-    { 'key': 'louvre', 'name': 'The Louvre' },
-    { 'key': 'airplane', 'name': 'Airplane' },
-    { 'key': 'concert', 'name': 'Concert' },
-    { 'key': 'space', 'name': 'Space' },
-    { 'key': 'park', 'name': 'Park'},
+    { 'key': rainforest, 'name': 'Rain Forest' },
+    { 'key': coffeeshop, 'name': 'Coffee Shop' },
+    { 'key': rainstorm, 'name' : 'Rain Storm' },
+    { 'key': louvre, 'name': 'The Louvre' },
+    { 'key': airplane, 'name': 'Airplane' },
+    { 'key': concert, 'name': 'Concert' },
   ]);
 
   return (
     <View style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.headerText}>Ambiances</Text>
+      </View>
       <FlatList
         data={environments}
         numColumns={2}
         renderItem={({ item }) => (
           <TouchableOpacity style={styles.item} onPress={() => ws.send(item.key)}>
-            <Text style={styles.itemText}>{item.name}</Text> 
+            <ImageBackground source={item.key} resizeMode="cover" style={styles.image}>
+              <Text style={styles.itemText}>{item.name}</Text>
+            </ImageBackground> 
           </TouchableOpacity>
         )}
       />
@@ -58,21 +65,32 @@ const HomePage = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginVertical: 5,
-    marginHorizontal: 5,
   },
   item: {
-    alignItems: 'center',
-    justifyContent: 'center',
     flex: 1,
-    margin: 5,
-    color: '#fff',
-    backgroundColor: '#000',
+    marginVertical: 5,
+    marginHorizontal: 5,
     height: 140,
+    borderRadius: 15,
   },
   itemText: {
+    color: '#fff',
+    fontSize: 24,
+  },
+  image: {
+    flex: 1,
+    justifyContent: "center",
     alignItems: 'center',
-    justifyContent: 'center',
+  },
+  header: {
+    height: 60,
+    backgroundColor: '#090A0A',
+    margin: 0,
+    justifyContent: "center",
+  },
+  headerText: {
+    fontWeight: 'bold',
+    fontSize: 32,
     color: '#fff',
   }
 });
