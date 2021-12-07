@@ -8,10 +8,10 @@ import {
     ImageBackground
   } from 'react-native';
   import SVGImg from '../assets/logo.svg';
- import icon_1 from '../assets/Brands.png';
- import icon_2 from '../assets/Brands-1.png';
- import icon_3 from '../assets/Brands-2.png';
- import icon_4 from '../assets/Brands-3.png';
+ import facebook from '../assets/icons/facebook.png';
+ import apple from '../assets/icons/apple.png';
+ import twitter from '../assets/icons/twitter.png';
+ import google from '../assets/icons/google.png';
 
 
 const LandingPage = ({ navigation }) => {
@@ -28,10 +28,10 @@ const LandingPage = ({ navigation }) => {
         </Pressable>
         <Text style={styles.text}>Already have an account? <Text style={styles.clickable}>Sign in</Text></Text>
         <View style={styles.iconContainer}>
-            <Image source={icon_1} />
-            <Image source={icon_2} />
-            <Image source={icon_3} />
-            <Image source={icon_4} />
+            <Image source={facebook} />
+            <Image source={google} />
+            <Image source={twitter} />
+            <Image source={apple} />
         </View>
         </View>
     </View>

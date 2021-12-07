@@ -6,10 +6,10 @@ import {
     View,
     Image
   } from 'react-native';
-import QuizIcon from '../assets/quiz.png';
-import SettingsIcon from '../assets/settings.png';
-import DeviceIcon from '../assets/device.png';
-import AmbienceIcon from '../assets/ambience.png';
+import QuizIcon from '../assets/icons/quiz.png';
+import SettingsIcon from '../assets/icons/settings.png';
+import DeviceIcon from '../assets/icons/device.png';
+import AmbienceIcon from '../assets/icons/ambience.png';
 
 
 const DecisionPage = ({ route, navigation }) => {

@@ -7,12 +7,14 @@ import {
   TouchableOpacity,
   ImageBackground
 } from 'react-native';
-import airplane from '../assets/coffeeshop.png';
-import coffeeshop from '../assets/coffeeshop.png';
-import concert from '../assets/concert.png';
-import louvre from '../assets/louvre.png';
-import rainforest from '../assets/rainforest.png';
-import rainstorm from '../assets/rainstorm.png';
+import airplane from '../assets/environments/coffeeshop.png';
+import coffeeshop from '../assets/environments/coffeeshop.png';
+import concert from '../assets/environments/concert.png';
+import louvre from '../assets/environments/louvre.png';
+import rainforest from '../assets/environments/rainforest.png';
+import rainstorm from '../assets/environments/rainstorm.png';
+import library from '../assets/environments/library.png';
+import space from '../assets/environments/space.png';
 
 
 // connecting to my server here
@@ -32,16 +34,18 @@ ws.onclose = (e) => {
 
 
 const HomePage = () => {
+  // test data
   const [environments, setEnvironments] = useState([
     { 'key': 'rainforest', 'name': 'Rain Forest', 'image': rainforest },
     { 'key': 'coffeeshop', 'name': 'Coffee Shop', 'image': coffeeshop },
+    { 'key': 'space', 'name': 'Space', 'image': space },
     { 'key': 'rainstorm', 'name': 'Rain Storm', 'image': rainstorm },
     { 'key': 'louvre', 'name': 'The Louvre', 'image': louvre },
     { 'key': 'airplane', 'name': 'Airplane', 'image': airplane },
     { 'key': 'concert', 'name': 'Concert', 'image': concert },
+    { 'key': 'library', 'name': 'Library', 'image': library },
   ]);
 
-  console.log(typeof environments[0].key)
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -68,14 +72,14 @@ const styles = StyleSheet.create({
   },
   item: {
     flex: 1,
-    marginVertical: 2.5,
-    marginHorizontal: 5,
+    marginVertical: 2,
+    marginHorizontal: 2,
     height: 140,
     borderRadius: 15,
   },
   itemText: {
-    color: '#fff',
     fontSize: 24,
+    color: '#fff',
   },
   image: {
     flex: 1,
@@ -84,13 +88,14 @@ const styles = StyleSheet.create({
   },
   header: {
     height: 60,
-    backgroundColor: '#090A0A',
     margin: 0,
+    paddingLeft: 10,
+    backgroundColor: '#090A0A',
     justifyContent: "center",
   },
   headerText: {
-    fontWeight: 'bold',
     fontSize: 32,
+    fontWeight: 'bold',
     color: '#fff',
   }
 });

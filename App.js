@@ -3,10 +3,10 @@
 import React from 'react';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import LandingPage from './components/LandingPage';
-import SignupPage from './components/SignupPage';
-import DecisionPage from './components/DecisionPage';
-import HomePage from './components/HomePage';
+import LandingPage from './screens/LandingPage';
+import SignupPage from './screens/SignupPage';
+import DecisionPage from './screens/DecisionPage';
+import HomePage from './screens/HomePage';
 
 const theme = {
   ...DefaultTheme,
